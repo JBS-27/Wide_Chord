@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>River and Core — Lyra 110</title>
+  </head>
+  <body>
+    <header>
+      <p class="kicker">TEST CELL 04 · LYRA 110</p>
+      <h1>RIVER AND CORE</h1>
+      <p class="sub">THREE SPOOL · BPR 10 · OPR 50</p>
+    </header>
+    <section id="poster" aria-live="polite">
+      <p id="verb">ADMIT</p>
+      <p id="line">The bellmouth keeps the river attached and hands it to the fan.</p>
+      <p id="num">STN 1</p>
+    </section>
+    <ul class="key">
+      <li><i class="swatch"></i>Cold metal</li>
+      <li><i class="swatch hot"></i>Hot section</li>
+      <li><i class="swatch fuel"></i>Fuel</li>
+      <li><i class="swatch oil"></i>Oil</li>
+      <li><i class="swatch bleed"></i>Bleed air</li>
+    </ul>
+    <aside id="board">
+      <p class="board-label">SYSTEMS</p>
+      <div id="modules"></div>
+      <p class="board-label">CLOCKS</p>
+      <div class="row" id="spools">
+        <button type="button" data-spool="all" aria-pressed="true">ALL</button>
+        <button type="button" data-spool="lp">N1</button>
+        <button type="button" data-spool="ip">N2</button>
+        <button type="button" data-spool="hp">N3</button>
+      </div>
+      <p class="board-label">POWER</p>
+      <div class="row" id="power">
+        <button type="button" data-power="start">START</button>
+        <button type="button" data-power="takeoff">TAKEOFF</button>
+        <button type="button" data-power="cruise">CRUISE</button>
+      </div>
+      <p class="board-label">LAYERS</p>
+      <div class="row" id="layers">
+        <button type="button" data-layer="air" aria-pressed="true">AIR</button>
+        <button type="button" data-layer="graph" aria-pressed="true">PRESSURE</button>
+        <button type="button" data-layer="cut" aria-pressed="true">CUTAWAY</button>
+      </div>
+      <p class="board-label">COMPRESSOR MAP</p>
+      <div id="cmap">
+        <svg viewBox="0 0 160 90" aria-hidden="true">
+          <path d="M12 78 C 42 72, 78 46, 148 12" fill="none" stroke="#c4552a" stroke-width="1.6" />
+          <circle id="cmap-dot" cx="24" cy="70" r="4" fill="#e7e2d8" />
+        </svg>
+        <p id="cmap-note">MAP DARK</p>
+      </div>
+      <label class="explode">
+        <span>EXPLODE</span>
+        <input id="explode" type="range" min="0" max="1000" value="0" aria-label="Explode the engine" />
+      </label>
+    </aside>
+    <p id="callout" hidden></p>
+    <footer class="console">
+      <i class="lamp" aria-hidden="true"></i>
+      <div class="lever">
+        <span>THROTTLE</span>
+        <input id="throttle" type="range" min="0" max="1000" value="0" aria-label="Throttle" />
+        <b id="throttle-word">IDLE</b>
+      </div>
+      <div class="rails">
+        <label class="rail">
+          <span>STATION</span>
+          <input id="station" type="range" min="0" max="1000" value="0" aria-label="Station" />
+          <span class="stations" id="stations">
+            <button type="button" data-t="0.12">2</button>
+            <button type="button" data-t="0.26">13</button>
+            <button type="button" data-t="0.4">25</button>
+            <button type="button" data-t="0.52">3</button>
+            <button type="button" data-t="0.64">4</button>
+            <button type="button" data-t="0.76">45</button>
+            <button type="button" data-t="0.86">5</button>
+            <button type="button" data-t="0.94">18</button>
+          </span>
+        </label>
+        <label class="rail">
+          <span>SECTION</span>
+          <input id="section" type="range" min="0" max="1000" value="820" aria-label="Section" />
+          <i class="ticks">CLOSED · OPEN ON THE CENTERLINE</i>
+        </label>
+        <p id="readout">N1 000 · N2 000 · N3 000</p>
+        <p id="thermo">T3 —— · T4 —— · WF —— · BYP —— · FN ——</p>
+      </div>
+      <div class="keys">
+        <button id="ride" type="button">RIDE THE AIR</button>
+        <button id="sound" type="button" aria-pressed="false">SOUND</button>
+        <p id="hint">The case is open. Pick a system on the right.</p>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
